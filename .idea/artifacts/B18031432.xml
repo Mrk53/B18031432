@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="B18031432">
+    <output-path>$USER_HOME$/Desktop/B18031432</output-path>
+    <root id="archive" name="B18031432_war.war">
+      <element id="artifact" artifact-name="B18031432:war exploded" />
+      <element id="dir-copy" path="$USER_HOME$/Desktop" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Dao.VisitorMapper">
+<!--    添加用户-->
+<!--    useGeneratedKeys="true" keyProperty="visitorID"-->
+<!--    <insert id="add" >-->
+<!--        insert into visitor(visitorID, visitorName, gender, phoneNumber, password, isMaster) VALUES-->
+<!--        (null,#{visitorName},#{gender},#{phoneNumber},#{password},0);-->
+<!--    </insert>-->
+
+
+
+
+
+    <select id="selectByID" resultType="Visitor">
+        select * from visitor where visitorID = #{id};
+    </select>
+    <select id="selectByCondition" resultType="Visitor">
+        select * from visitor where 1 = 1
+                <if test="gender != null and gender != '' ">
+                   and gender  = #{gender}
+                </if>
+
+                <if test="visitorName != null and visitorName != '' ">
+                   and visitorName  like #{visitorName}
+                </if>
+                <if test="phoneNumber != null and phoneNumber != '' ">
+                   and phoneNumber  like #{phoneNumber}
+                </if>
+
+                <if test="isMaster != null">
+                   and isMaster  = #{isMaster}
+                </if>
+        ;
+    </select>
+</mapper>
